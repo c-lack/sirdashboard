@@ -8,6 +8,7 @@ import Options from './Options';
 // Widgets for the dashboard
 import BarChart from './widgets/BarChart'
 import LineChart from './widgets/LineChart'
+import DoubleChart from './widgets/DoubleChart'
 
 // We are using bootstrap as the UI library
 import 'bootstrap/dist/css/bootstrap.css';
@@ -29,6 +30,10 @@ class App extends Component {
 					type: BarChart,
 					title: 'Summary Statistics',
 				},
+				DoubleSummary: {
+					type: DoubleChart,
+					title: 'Summary Statistics'
+				},
 			},
 			// Layout of the dashboard
 			layout: {
@@ -38,7 +43,7 @@ class App extends Component {
 						widgets: [{key: 'SIRTimeSeries'}]
 					},{
 						className: 'col-md-4 col-sm-4 col-xs-4',
-						widgets: [{key: 'SummaryStat'}]
+						widgets: [{key: 'DoubleSummary'}]
 					}]
 				}]
 			}
