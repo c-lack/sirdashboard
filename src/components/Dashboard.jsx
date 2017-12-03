@@ -39,7 +39,7 @@ class App extends Component {
 					},{
 						className: 'col-md-4 col-sm-4 col-xs-4',
 						widgets: [{key: 'SummaryStat'}, {key: 'SummaryStat'}]
-					}],
+					}]
 				}]
 			}
 		}

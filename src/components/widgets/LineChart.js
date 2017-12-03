@@ -27,7 +27,7 @@ class LineChart extends Component {
   render() {
     return (
       <div >
-         <Line data={this.state.data} options={{responsive: true, animationSteps: 300 }} height={400} width={800} />
+         <Line data={this.state.data} options={{responsive: true, animationSteps: 300 }} height={580} width={800} />
        </div>
     );
   }
