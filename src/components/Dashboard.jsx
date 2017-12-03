@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dashboard, { addWidget } from 'react-dazzle';
+import Dashboard from 'react-dazzle';
 
 // App components
 import Header from './Header';
@@ -36,15 +36,10 @@ class App extends Component {
 					columns: [{
 						className: 'col-md-8 col-sm-8 col-xs-8',
 						widgets: [{key: 'SIRTimeSeries'}]
-					}],
-				}, {
-					columns: [{
-						className: 'col-md-4 col-sm-4 col-xs-4',
-						widgets: [{key: 'SummaryStat'}]
 					},{
 						className: 'col-md-4 col-sm-4 col-xs-4',
-						widgets: [{key: 'SummaryStat'}]
-					}]
+						widgets: [{key: 'SummaryStat'}, {key: 'SummaryStat'}]
+					}],
 				}]
 			}
 		}
