@@ -8,7 +8,6 @@ class LineChart extends Component {
     this.state = {
       data: props.data
     };
-    console.log(this.state.data.labels)
   }
 
   render() {

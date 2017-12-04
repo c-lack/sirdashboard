@@ -64,22 +64,52 @@ class App extends Component {
 	optionsDataCallback = (optionsData) => {
 		sirModel.set_beta(optionsData.beta)
 		sirModel.set_gamma(optionsData.gamma)
-		console.log(sirModel)
 		var output = sirModel.solve();
-		this.state.widgets.SIRTimeSeries.props.data = {
-			labels: [0,0.5,3],
-			datasets: [{
-				label: 'S',
-	            fillColor: '#F1E7E5',
-	            strokeColor: '#E8575A',
-	            pointColor: '#E8575A',
-                pointStrokeColor: '#fff',
-	            pointHighlightFill: '#ff',
-	            pointHighlightStroke: 'rgba(220,220,220,1)',
-				data: [0,0.5,3]
-			}],
+		var S = [];
+		var I = [];
+		var R = [];
+		for (var i = 0; i < output.x.length; i++) {
+			S.push(output.x[i][0]);
+			I.push(output.x[i][1]);
+			R.push(output.x[i][2]);
 		}
-		this.forceUpdate()
+		this.setState({
+			widgets: {
+				SIRTimeSeries: {
+					type: LineChart,
+					title: 'Model',
+					props: {
+						data: {
+							labels: output.t,
+							datasets: [{
+								label: 'S',
+								data: S,
+							},{
+								label: 'I',
+								data: I,
+							},{
+								label: 'R',
+								data: R,
+							}]
+						},
+					}
+				},
+				SummaryStat_1: {
+					type: BarChart,
+					title: 'Summary Statistic 1',
+					props: {
+						data: {},
+					}
+				},
+				SummaryStat_2: {
+					type: BarChart,
+					title: 'Summary Statistic 2',
+					props: {
+						data: {},
+					}
+				},
+			}
+		});
 	}
 
 	render() {
