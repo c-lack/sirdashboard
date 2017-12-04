@@ -2,20 +2,11 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 class BarChart extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
     this.state = {
-      data: {
-        labels: ['R0'],
-        datasets: [
-          {
-            label: 'R0',
-            fillColor: '#E8575A',
-            strokeColor: '#E8575A',
-            data: [1],
-          },
-        ],
-      },
+      data: props.data
     };
   }
 

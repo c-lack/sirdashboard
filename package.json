@@ -11,7 +11,8 @@
     "react-dazzle": "^1.2.7",
     "react-dom": "^16.1.1",
     "react-props": "0.0.3",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "sir-model": "1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
